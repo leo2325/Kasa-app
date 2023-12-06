@@ -1,0 +1,90 @@
+ // styles.scss
+
+ @font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+$color_1: #FFFFFF;
+$color_2: transparent;
+$font-family_1: Montserrat;
+$background-color_1: #F7F7F7;
+
+.banner {
+	width: 1240px;
+	height: 223px;
+	margin: 0 auto;
+	background-position: center;
+	border-radius: 25px;
+	display: flex;
+	align-items: center;
+	opacity: 90%;
+	mix-blend-mode: darken;
+	background-image: url('../assets/bannerBackground.png');
+	
+	h1 {
+		width: 1240px;
+		height: 223px;
+		border-radius: 25px;
+		background: rgb(0,0,0);
+		background: linear-gradient(0deg, rgba(0,0,0,0.45284051120448177) 0%, rgba(0,0,0,0.45284051120448177) 100%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: $font-family_1;
+		color: $color_1;
+		font-size: 48px;
+		font-weight: 500;
+		line-height: 68px;
+		letter-spacing: 0em;
+	}
+}
+
+#Gallery {
+	width: 1200px;
+	min-height: 829px;
+	border-radius: 25px;
+	background-color: $background-color_1;
+	margin: 44px auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-row-gap: 44px;
+	grid-column-gap: 22px;
+	align-content: center;
+	padding-top: 44px;
+	padding-bottom: 44px;
+}
+.CardPreview {
+	width: 340px;
+	height: 340px;
+	border-radius: 25px;
+	background-size: auto;
+	background-position: center;
+}
+.shadowPreviewContainer {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	width: 340px;
+	height: 340px;
+	border-radius: 25px;
+	background: rgb(0,0,0);
+	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 40%);
+	margin: 0;
+}
+.PreviewCardTitle {
+	width: 300px;
+	height: 52px;
+	margin: 20px auto;
+	color: $color_1;
+	font-family: $font-family_1;
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 26px;
+	list-style: none;
+}
+::marker {
+	color: $color_2;
+}
