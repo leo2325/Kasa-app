@@ -26,6 +26,8 @@ nav {
 		font-size: 24px;
 		text-align: right;
 		text-underline-offset: unset;
+		text-decoration: none;
+		
 		&:hover {
 			text-decoration: underline;
 			cursor: pointer;

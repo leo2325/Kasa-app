@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Collapse } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight, faChevronDown, faChevronLeft, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faStar } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/Card.scss';
+import Carousel from '../Carousel';
 
-const Card = ({ id, cover, title, location, name, picture, tags, rating, description, equipments }) => {
+
+const Card = ({ id, cover, title, location, name, picture, pictures, tags, rating, description, equipments }) => {
   const [sectionVisibility, setSectionVisibility] = useState({
     description: false,
     equipments: false,
@@ -34,14 +36,11 @@ const Card = ({ id, cover, title, location, name, picture, tags, rating, descrip
     return <div>{stars}</div>;
   };
 
+
   return (
     <section className='Card_container' key={`${id}`}>
-      <div id='bannerCard'>
-        <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
-        <img src={cover} alt='cover card' />
-        <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
-        
-      </div>
+
+      <Carousel pictures={pictures} />
 
       <div id='LocationHost_container'>
         <div className='Location_'>
@@ -62,6 +61,7 @@ const Card = ({ id, cover, title, location, name, picture, tags, rating, descrip
       </div>
 
       <div>
+        
         <div id='List_container'>
           <ul className='Description_'>
             <div className='listCollapse_title' onClick={() => handleToggle('description')}>
@@ -96,13 +96,12 @@ const Card = ({ id, cover, title, location, name, picture, tags, rating, descrip
 };
 
 Card.propTypes = {
-  key: PropTypes.string,
   cover: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   picture: PropTypes.string,
-  tags: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
   rating: PropTypes.string,
   description: PropTypes.string.isRequired,
   equipments: PropTypes.arrayOf(PropTypes.string),

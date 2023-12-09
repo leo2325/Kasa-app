@@ -11,12 +11,13 @@ function GalleryCards() {
     </section>
     <ul id="Gallery">
         {datas.map((data) => (
-          <Link to={`../Card/${data.id}`}>
-          <li key={`${data.id}`} className='CardPreview' style={{ backgroundImage: `url(${data.cover})` }}> 
-            <div className="shadowPreviewContainer">
-              <h2 className='PreviewCardTitle'>{data.title}</h2>
-            </div>
-          </li></Link>
+          <Link key={`${data.id}`} to={`../Card/${data.id}`}>
+            <li className='CardPreview' style={{ backgroundImage: `url(${data.cover})` }}> 
+              <div className="shadowPreviewContainer">
+                <h2 className='PreviewCardTitle'>{data.title}</h2>
+              </div>
+            </li>
+          </Link>
         ))}
       </ul></> 
   );

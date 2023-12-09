@@ -1,6 +1,6 @@
 $color_1: #ff6060;
+$color_2: white;
 $font-family_1: Montserrat;
-$background-color_1: white;
 
 .Error404 {
 	color: $color_1;
@@ -27,7 +27,7 @@ $background-color_1: white;
 		font-family: $font-family_1;
 		font-size: 18px;
 		font-weight: 500;
-		background-color: $background-color_1;
+		background-color: $color_1;
 		color: $color_1;
 		border: none;
 		cursor: pointer;

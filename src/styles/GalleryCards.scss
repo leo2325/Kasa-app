@@ -1,16 +1,14 @@
- // styles.scss
-
  @font-face {
     font-family: 'Montserrat';
     src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-  }
+}
 
 $color_1: #FFFFFF;
+$background-color_1: #FFFFFF;
 $color_2: transparent;
 $font-family_1: Montserrat;
-$background-color_1: #F7F7F7;
 
 .banner {
 	width: 1240px;
@@ -41,12 +39,11 @@ $background-color_1: #F7F7F7;
 		letter-spacing: 0em;
 	}
 }
-
 #Gallery {
-	width: 1200px;
+	width: 1240px;
 	min-height: 829px;
 	border-radius: 25px;
-	background-color: $background-color_1;
+	background-color: #f7f7f7;
 	margin: 44px auto;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -55,6 +52,9 @@ $background-color_1: #F7F7F7;
 	align-content: center;
 	padding-top: 44px;
 	padding-bottom: 44px;
+}
+#Gallery a {
+	text-decoration: none;
 }
 .CardPreview {
 	width: 340px;

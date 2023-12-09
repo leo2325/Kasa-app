@@ -20,6 +20,7 @@ function showCard() {
                     location={data.location}
                     name={data.host.name}
                     picture={data.host.picture}  
+                    pictures={data.pictures}
                     tags={data.tags}
                     rating={data.rating}
                     description={data.description}
