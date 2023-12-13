@@ -3,9 +3,10 @@ import { Collapse } from 'react-bootstrap';
 import classnames from 'classnames';
 import '../../styles/Apropos.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp } from '@fortawesome/free-solid-svg-icons';
 
 function About() {
+  // Tableau contenant les éléments de liste 'titre' et 'contenu', récupérés sur les commentaires de la maquette figma.
   const items = [
     {
       title: 'Fiabilité',
@@ -25,20 +26,30 @@ function About() {
     },
   ];
 
+  // Le hook useState est utilisé pour déclarer un état local expanded qui stocke l'index de l'élément de liste actuellement étendu.
   const [expanded, setExpanded] = useState(null);
 
+  // Fonction flêchée pour dérouler les listes.
+  // Une fonction handleToggle est définie pour basculer l'élément de liste actuellement étendu en fonction de l'index passé en paramètre.
   const handleToggle = (index) => {
     setExpanded(expanded === index ? null : index);
   };
-
+  // Une fonction getIconRotationClass génère une classe CSS conditionnelle pour faire pivoter l'icône de la flèche vers le haut en fonction de l'index.
   const getIconRotationClass = (index) => {
     return classnames('rotate-icon', {
       'rotated': expanded === index,
     });
   };
-
+  // Le rendu du composant consiste en une section contenant :
+  //  une bannière (<div className='banner'></div>) 
+  //  et une liste (<ul>) d'éléments (<li>) définis par le tableau items.
+  // Chaque élément de la liste est composé d'un titre cliquable et d'une zone rétractable (collapse) contenant du contenu textuel. 
+  // L'état de l'expansion est géré par l'état local expanded.
+  // L'icône de la flèche vers le haut est également incluse et elle pivote en fonction de l'état d'expansion.
+  // Note : Le code utilise des fonctionnalités de React Bootstrap et FontAwesome pour styliser et animer certains éléments.
   return (
     <section id='collapse_Container'>
+
       <div className='banner'></div>
 
       <div id='aboutUs_container'>
@@ -53,7 +64,7 @@ function About() {
                 onClick={() => handleToggle(index)}
               >
                 <h3>{item.title}</h3>
-                <FontAwesomeIcon icon={faChevronDown} className={getIconRotationClass(index)} />
+                <FontAwesomeIcon icon={faChevronUp} className={getIconRotationClass(index)} />
               </div>
               <Collapse id={`collapse-${index}`} in={expanded === index}>
                 <div className='listCollapse_content'>

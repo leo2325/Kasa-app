@@ -10,21 +10,11 @@ const Logo = styled.img`
 `
 function Header() {
     return <header>
-
                 <Logo src={logoHeader} alt="Logo" />
-                
                 <nav id="nav">
                     <Link to='/Home'>Acceuil</Link>
                     <Link to='/APropos'>A propos</Link>
                 </nav>
-
             </header>
 }
-
 export default Header
-
-
-
-
-
-

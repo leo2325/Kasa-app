@@ -17,11 +17,13 @@ $font-family_1: Montserrat;
 	background-position: center;
 	border-radius: 25px;
 	display: flex;
-	align-items: center;
 	opacity: 90%;
 	mix-blend-mode: darken;
 	background-image: url('../assets/bannerBackground.png');
-	
+	@media (max-width: 899px) {
+		width: 335px;
+		height: 111px;
+	}
 	h1 {
 		width: 1240px;
 		height: 223px;
@@ -37,6 +39,14 @@ $font-family_1: Montserrat;
 		font-weight: 500;
 		line-height: 68px;
 		letter-spacing: 0em;
+		@media (max-width: 899px) {
+			width: 335px;
+			height: 111px;
+			font-size: 24px;
+			line-height: 24px;
+			margin: 0 auto;
+			padding: 0 88px 0 24px;
+		}
 	}
 }
 #Gallery {
@@ -52,6 +62,13 @@ $font-family_1: Montserrat;
 	align-content: center;
 	padding-top: 44px;
 	padding-bottom: 44px;
+	@media (max-width: 899px) {
+		width: 335px;
+		grid-template-columns: repeat(1, 1fr);
+		background-color: $color_1;
+		padding: 0;
+		grid-row-gap: 24px;
+	}
 }
 #Gallery a {
 	text-decoration: none;
@@ -62,17 +79,25 @@ $font-family_1: Montserrat;
 	border-radius: 25px;
 	background-size: auto;
 	background-position: center;
+	@media (max-width: 899px) {
+		width: 335px;
+		height: 255px;
+	}
 }
 .shadowPreviewContainer {
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-end;
-	width: 340px;
 	height: 340px;
 	border-radius: 25px;
 	background: rgb(0,0,0);
 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 40%);
 	margin: 0;
+	@media (max-width: 899px) {
+		width: 335px;
+		height: 255px;
+		margin: 0 auto;
+	}
 }
 .PreviewCardTitle {
 	width: 300px;
@@ -84,7 +109,14 @@ $font-family_1: Montserrat;
 	font-weight: 500;
 	line-height: 26px;
 	list-style: none;
+	@media (max-width: 899px) {
+		width: 295.59px;
+		height: 52px;
+		margin: 24px auto;
+		padding-right: 44px;
+	}
 }
 ::marker {
 	color: $color_2;
+	visibility: hidden;
 }

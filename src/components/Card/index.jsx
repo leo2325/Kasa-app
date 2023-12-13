@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { Collapse } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faChevronUp, faStar } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/Card.scss';
 import Carousel from '../Carousel';
 
@@ -33,7 +33,7 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
       stars.push(<FontAwesomeIcon key={i} icon={faStar} style={{ color: starColor }} />);
     }
 
-    return <div>{stars}</div>;
+    return <div className='Rating_'>{stars}</div>;
   };
 
 
@@ -41,47 +41,46 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
     <section className='Card_container' key={`${id}`}>
 
       <Carousel pictures={pictures} />
-
-      <div id='LocationHost_container'>
-        <div className='Location_'>
-          <p className='cardTitle'>{title}</p>
-          <p className='location'>{location}</p>
+      <div id='cardInfos_Container'>
+        <div id='LocationInfos_container'>
+          <div className='Location_'>
+            <p className='cardTitle'>{title}</p>
+            <p className='location'>{location}</p>
+          </div>
+          <div className='Tags_'>
+            {tags && tags.map((tag, index) => <p key={index}>{tag}</p>)}
+          </div>
         </div>
-        <div className='Host_'>
-          <p className='hostName'>{name}</p>
-          <img src={picture} className='hostPicture' alt='utilisateur' />
+        <div id='TagsRating_container'>
+          <div className='Host_'>
+            <p className='hostName'>{name}</p>
+            <img src={picture} className='hostPicture' alt='utilisateur' />
+          </div>
+          {renderStarRating()}
         </div>
-      </div>
-
-      <div id='TagsRating_container'>
-        <div className='Tags_'>
-          {tags && tags.map((tag, index) => <p key={index}>{tag}</p>)}
-        </div>
-        {renderStarRating()}
       </div>
 
       <div>
-        
         <div id='List_container'>
           <ul className='Description_'>
             <div className='listCollapse_title' onClick={() => handleToggle('description')}>
               <h3>Description</h3>
               <FontAwesomeIcon
-                icon={faChevronDown}
+                icon={faChevronUp}
                 className={sectionVisibility.description ? 'rotated' : ''}
               />
             </div>
             <Collapse in={sectionVisibility.description}>
               <div>
-                <li>{description}</li>
+                <p>{description}</p>
               </div>
             </Collapse>
           </ul>
-          <ul className='Equipements'>
+          <ul className='Equipements_'>
             <div className='listCollapse_title' onClick={() => handleToggle('equipments')}>
               <h3>Equipements</h3>
               <FontAwesomeIcon
-                icon={faChevronDown}
+                icon={faChevronUp}
                 className={sectionVisibility.equipments ? 'rotated' : ''}
               />
             </div>
