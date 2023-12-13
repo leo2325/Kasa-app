@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import Card from '../../components/Card';
-import {useParams} from 'react-router-dom';
+import { Navigate, useParams} from 'react-router-dom';
 
 
 import { datas } from '../../datas/datas';
@@ -13,19 +13,21 @@ function showCard() {
 
     return (
         <div>
-                <Card 
+                {data === undefined ? <Navigate replace to="/404" /> :
+                <Card
                     id={data.id}
                     cover={data.cover}
                     title={data.title}
                     location={data.location}
                     name={data.host.name}
-                    picture={data.host.picture}  
+                    picture={data.host.picture}
                     pictures={data.pictures}
                     tags={data.tags}
                     rating={data.rating}
                     description={data.description}
                     equipments={data.equipments}
                 />
+            }
         </div>
     )
 }

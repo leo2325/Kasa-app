@@ -70,7 +70,7 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
                 className={sectionVisibility.description ? 'rotated' : ''}
               />
             </div>
-            <Collapse in={sectionVisibility.description}>
+            <Collapse in={sectionVisibility.description} className='collapse_content'>
               <div>
                 <p>{description}</p>
               </div>
@@ -84,7 +84,7 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
                 className={sectionVisibility.equipments ? 'rotated' : ''}
               />
             </div>
-            <Collapse in={sectionVisibility.equipments}>
+            <Collapse in={sectionVisibility.equipments} className='collapse_content'>
               <div>{renderListItems(equipments)}</div>
             </Collapse>
           </ul>
