@@ -11,7 +11,7 @@ $color_2: transparent;
 $font-family_1: Montserrat;
 
 .banner {
-	width: 1240px;
+	width: 88%;
 	height: 223px;
 	margin: 0 auto;
 	background-position: center;
@@ -21,11 +21,10 @@ $font-family_1: Montserrat;
 	mix-blend-mode: darken;
 	background-image: url('../assets/bannerBackground.png');
 	@media (max-width: 899px) {
-		width: 335px;
 		height: 111px;
 	}
 	h1 {
-		width: 1240px;
+		width: 100%;
 		height: 223px;
 		border-radius: 25px;
 		background: rgb(0,0,0);
@@ -40,7 +39,6 @@ $font-family_1: Montserrat;
 		line-height: 68px;
 		letter-spacing: 0em;
 		@media (max-width: 899px) {
-			width: 335px;
 			height: 111px;
 			font-size: 24px;
 			line-height: 24px;
@@ -50,7 +48,7 @@ $font-family_1: Montserrat;
 	}
 }
 #Gallery {
-	width: 1240px;
+	width: 88%;
 	min-height: 829px;
 	border-radius: 25px;
 	background-color: #f7f7f7;
@@ -58,19 +56,21 @@ $font-family_1: Montserrat;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-row-gap: 44px;
-	grid-column-gap: 22px;
+	grid-column-gap: auto;
 	align-content: center;
 	padding-top: 44px;
 	padding-bottom: 44px;
-	@media (max-width: 899px) {
-		width: 335px;
-		grid-template-columns: repeat(1, 1fr);
+	padding-left: 0;
+	@media (max-width: 1169px) {
+		grid-template-columns: repeat(2, 1fr);
 		background-color: $color_1;
-		padding: 0;
-		grid-row-gap: 24px;
+	}
+	@media (max-width: 899px) {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
 #Gallery a {
+	margin: 0 auto;
 	text-decoration: none;
 }
 .CardPreview {
@@ -80,7 +80,7 @@ $font-family_1: Montserrat;
 	background-size: auto;
 	background-position: center;
 	@media (max-width: 899px) {
-		width: 335px;
+		width: 355px;
 		height: 255px;
 	}
 }
@@ -94,9 +94,7 @@ $font-family_1: Montserrat;
 	background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 40%);
 	margin: 0;
 	@media (max-width: 899px) {
-		width: 335px;
 		height: 255px;
-		margin: 0 auto;
 	}
 }
 .PreviewCardTitle {

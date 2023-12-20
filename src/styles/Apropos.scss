@@ -5,23 +5,24 @@ $background-color_2: #F7F7F7;
 
 
 #collapse_Container {
-	width: 1240px;
+	width: 100%;
 	margin: 0 auto;
 		@media (max-width: 899px) {
-			width: 335px;
 		}
 	.banner {
 		background-image: url('../assets/bannerCollapse.png');
 		@media (max-width: 899px) {
-			width: 335px;
 		}
 	}
 	#aboutUs_container {
 		display: flex;
 		justify-content: center;
 		ul {
+			padding-left: 0;
+			width: 72%;
+			margin: 0 auto;
 			@media (max-width: 899px) {
-				padding-left: 0;
+				width: 88%;
 			}
 			.listCollapse_title {
 				display: flex;
@@ -33,7 +34,7 @@ $background-color_2: #F7F7F7;
 				background-color: $color_2;
 				color: $color_1;
 				border-radius: 5px;
-				margin-top: 25px;
+				margin: 25px auto 0;
 				@media (max-width: 899px) {
 					height: 30px;
 				}
@@ -63,13 +64,9 @@ $background-color_2: #F7F7F7;
 		}
 
 		.listCollapse_content {
-			width: 983px;
 			margin: 0 0 20px 0;
 			background-color: $background-color_2;
 			border-radius: 5px;
-			@media (max-width: 899px) {
-				width: 335px;
-			}
 			p {
 				padding: 20px;
 				color: $color_2;
@@ -83,12 +80,6 @@ $background-color_2: #F7F7F7;
 					font-size: 12px;
 				}
 			}
-		}
-	}
-	#aboutUs_container .listCollapse_title {
-		width: 983px;
-		@media (max-width: 899px) {
-			width: 335px;
 		}
 	}
 }
