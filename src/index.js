@@ -1,12 +1,15 @@
 import * as React from "react";
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 import Home from './pages/Home/';
 import APropos from './pages/APropos';
 import Card from './pages/Card';
 import Error from './pages/Error404';
-import Header from './components/Header';
-import Footer from './components/Footer';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min';
 
