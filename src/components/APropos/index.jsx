@@ -45,26 +45,31 @@ function About() {
       <div id='aboutUs_container'>
         <ul>
           {items.map((item, index) => (
+            
             <li key={index}>
-              <div
-                className='listCollapse_title'
-                data-toggle='collapse'
-                data-target={`#collapse-${index}`}
-                aria-expanded={expanded === index}
-                onClick={() => handleToggle(index)}
-              >
+
+              <div className='listCollapse_title' data-toggle='collapse' data-target={`#collapse-${index}`} aria-expanded={expanded === index} onClick={() => handleToggle(index)}>
+                
                 <h3>{item.title}</h3>
+
+                <img className={getIconRotationClass(index)} src="../../assets/icon/arrow_back_ios-24px.svg" alt="icon flêche"/>
+
                 <FontAwesomeIcon icon={faChevronUp} className={getIconRotationClass(index)} />
+              
               </div>
-              <Collapse id={`collapse-${index}`} in={expanded === index}>
+
+              <div id={`collapse-${index}`} in={expanded === index}>
                 <div className='listCollapse_content'>
                   <p>{item.content}</p>
                 </div>
-              </Collapse>
+              </div>
+
             </li>
+            
           ))}
         </ul>
       </div>
+
     </section>
   );
 }
