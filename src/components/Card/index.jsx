@@ -20,7 +20,7 @@ const Card = ({ id, title, location, name, picture, pictures, tags, rating, desc
     const ratingValue = Math.floor(Number(rating));
 
     for (let i = 1; i <= 5; i++) {
-      stars.push( <img src={i <= ratingValue ? StarActive : StarInactive} alt=""/> )
+      stars.push(<img key={i} src={i <= ratingValue ? StarActive : StarInactive} alt="" />)
     }
 
     return <div className='Rating_'>{stars}</div>;
