@@ -52,7 +52,7 @@ function About() {
                 
                 <h3>{item.title}</h3>
 
-                <img className={getIconRotationClass(index)} src="../../assets/icon/arrow_back_ios-24px.svg" alt="icon flêche"/>
+                <img className={getIconRotationClass(index)} src="../assets/icon/arrow_back_ios-24px.svg" alt="icon flêche"/>
 
                 <FontAwesomeIcon icon={faChevronUp} className={getIconRotationClass(index)} />
               
