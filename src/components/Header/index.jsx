@@ -12,7 +12,7 @@ function Header() {
     return <header>
                 <Logo src={logoHeader} alt="Logo" />
                 <nav id="nav">
-                    <Link to='/Home'>Acceuil</Link>
+                    <Link to='/Home'>Accueil</Link>
                     <Link to='/APropos'>A propos</Link>
                 </nav>
             </header>
