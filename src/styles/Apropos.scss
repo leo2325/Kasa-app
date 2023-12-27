@@ -4,6 +4,13 @@ $font-family_1: Montserrat;
 $background-color_2: #F7F7F7;
 
 
+.hide {
+	display: none;
+   }
+   .show {
+	   display: block;
+   }
+
 #collapse_Container {
 	width: 100%;
 	margin: 0 auto;

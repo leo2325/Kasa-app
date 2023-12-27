@@ -1,24 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { Collapse } from 'react-bootstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronUp, faStar } from '@fortawesome/free-solid-svg-icons';
+// import { Collapse } from 'react-bootstrap';
+import Collapse from '../Collapse';
 import '../../styles/Card.scss';
 import Carousel from '../Carousel';
+import StarActive from '../../assets/icon/star-active.svg';
+import StarInactive from '../../assets/icon/star-inactive.svg';
 
 
-const Card = ({ id, cover, title, location, name, picture, pictures, tags, rating, description, equipments }) => {
-  const [sectionVisibility, setSectionVisibility] = useState({
-    description: false,
-    equipments: false,
-  });
-
-  const handleToggle = (section) => {
-    setSectionVisibility({
-      ...sectionVisibility,
-      [section]: !sectionVisibility[section],
-    });
-  };
+const Card = ({ id, title, location, name, picture, pictures, tags, rating, description, equipments }) => {
+  
 
   const renderListItems = (items) => {
     return items && items.map((item, index) => <li key={index}>{item}</li>);
@@ -29,8 +20,7 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
     const ratingValue = Math.floor(Number(rating));
 
     for (let i = 1; i <= 5; i++) {
-      const starColor = i <= ratingValue ? '#ff6060' : 'grey';
-      stars.push(<FontAwesomeIcon key={i} icon={faStar} style={{ color: starColor }} />);
+      stars.push( <img src={i <= ratingValue ? StarActive : StarInactive} alt=""/> )
     }
 
     return <div className='Rating_'>{stars}</div>;
@@ -62,32 +52,8 @@ const Card = ({ id, cover, title, location, name, picture, pictures, tags, ratin
 
       <div>
         <div id='List_container'>
-          <ul className='Description_'>
-            <div className='listCollapse_title' onClick={() => handleToggle('description')}>
-              <h3>Description</h3>
-              <FontAwesomeIcon
-                icon={faChevronUp}
-                className={sectionVisibility.description ? 'rotated' : ''}
-              />
-            </div>
-            <Collapse in={sectionVisibility.description} className='collapse_content'>
-              <div>
-                <p>{description}</p>
-              </div>
-            </Collapse>
-          </ul>
-          <ul className='Equipements_'>
-            <div className='listCollapse_title' onClick={() => handleToggle('equipments')}>
-              <h3>Equipements</h3>
-              <FontAwesomeIcon
-                icon={faChevronUp}
-                className={sectionVisibility.equipments ? 'rotated' : ''}
-              />
-            </div>
-            <Collapse in={sectionVisibility.equipments} className='collapse_content'>
-              <div>{renderListItems(equipments)}</div>
-            </Collapse>
-          </ul>
+          <Collapse title="Descriptions" id="Desc" content={description} />
+          <Collapse title="Equipements" id="Equip" content={renderListItems(equipments)} />
         </div>
       </div>
     </section>

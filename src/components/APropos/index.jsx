@@ -49,20 +49,15 @@ function About() {
             <li key={index}>
 
               <div className='listCollapse_title' data-toggle='collapse' data-target={`#collapse-${index}`} aria-expanded={expanded === index} onClick={() => handleToggle(index)}>
-                
                 <h3>{item.title}</h3>
-
-                <img className={getIconRotationClass(index)} src="../assets/icon/arrow_back_ios-24px.svg" alt="icon flêche"/>
-
                 <FontAwesomeIcon icon={faChevronUp} className={getIconRotationClass(index)} />
-              
               </div>
 
-              <div id={`collapse-${index}`} in={expanded === index}>
+              <Collapse id={`collapse-${index}`} in={expanded === index}>
                 <div className='listCollapse_content'>
                   <p>{item.content}</p>
                 </div>
-              </div>
+              </Collapse>
 
             </li>
             
